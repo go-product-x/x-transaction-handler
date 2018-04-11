@@ -8,7 +8,7 @@ let pg_url = process.env.DATABASE_URL
 
 //A handler function to consume a transaction message from the queue
 //'initial-transaction-task' and write it to the transactions table in Postgres
-const consumeTransactionFromQueue = async () => {
+const consumeInitialTransactionFromQueue = async () => {
     try {
         //Connect to PG and RabbitMQ
         const pool = new Pool({ connectionString: pg_url, ssl: true })
@@ -91,4 +91,4 @@ const consumeTransactionFromQueue = async () => {
     }
 }
 
-module.exports = consumeTransactionFromQueue
+module.exports = consumeInitalTransactionFromQueue

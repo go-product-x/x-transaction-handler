@@ -1,12 +1,11 @@
-require('dotenv').config()
-const express = require('express')
-const bodyParser = require('body-parser')
-let app = express()
+//Require modules
+//require('dotenv').config() //Uncomment for use in local environment
 
-var consumeTransactionFromQueue = require('./logic/initial-transaction-to-database.js')
+//Import handler functions
+let consumeInitialTransactionFromQueue = require('./logic/initial-transaction-to-database.js')
 
-
-consumeTransactionFromQueue()
+//Run functions
+consumeInitialTransactionFromQueue()
 
 
 
